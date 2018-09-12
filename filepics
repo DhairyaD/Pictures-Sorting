@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Organize the photos into directories by the date that they were created. Takes an existing directory as an argument
+
+dirc=$1
+PATH=$PATH:/courses/courses/cscb09s18/bin
+
+# directory check or number of arguments = 0
+if [ ! -d $dirc ] || [ $# -eq 0 ]
+then
+    clear
+    echo "Provided argument is not a directory. Please try again." >&2
+    exit 1
+
+else
+    for i in $dirc/*.jpg
+    do
+        # Call exiftime on i, cut year in format (2003:06:20)
+        yearOfPicture=`exiftime -tg $i | cut -f3 -d " " | cut -f1 -d ":"`
+        monthOfPicture=`exiftime -tg $i | cut -f3 -d " " | cut -f2 -d ":"`
+       
+        if [ -d ./$year ]
+        then         
+            if [ -d ./$yearOfPicture/$monthOfPicture ]
+            then  
+                cp $i ./$yearOfPicture/$monthOfPicture    
+            else                
+                mkdir ./$yeyearOfPicturear/$monthOfPicture    
+                cp $i ./$yearOfPicture/$monthOfPicture    
+            fi
+        else                    
+            mkdir ./$yearOfPicture           
+            mkdir ./$yearOfPicture/$monthOfPicture        
+            cp $i ./$yearOfPicture/$monthOfPicture        
+        fi
+    done
+fi
