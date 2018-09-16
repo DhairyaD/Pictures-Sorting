@@ -28,4 +28,4 @@ filepics:
 mkpics2:
 
 - a modified version of mkpics. It takes the number of columns and a directory as an argument instead of the number of columns and list of files. The directory is the root of a tree of filled pictures from running filepics. It contains subdirectories by year which contain subdirectories by month which contain the pictures.
-- writes to standard output one html document that has a table of photos for each year. Each table will be preceded by an <h2> header with the year. 
+- writes to standard output one html document that has a table of photos for each year. Each table will be preceded by an h2 header with the year. 
