@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 # Organize the photos into directories by the date that they were created. Takes an existing directory as an argument
 
 dirc=$1
