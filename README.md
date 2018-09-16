@@ -2,9 +2,9 @@
 
 Overview: 
 
-mkpics - generates an html file to display a table of photos
-filepics - organizes the photos into directories by the date that they were created
-mkpics2 - extends mkpics to handle the directories created by filepics
+- mkpics - generates an html file to display a table of photos
+- filepics - organizes the photos into directories by the date that they were created
+- mkpics2 - extends mkpics to handle the directories created by filepics
 
 Details: 
 
@@ -23,3 +23,9 @@ filepics:
 
 - will take an existing directory as an argument. For each picture in that directory, filepics will use exiftime to get the time that the picture was generated. It will move the pictures to directories by year, and within year by month. The year directories will be subdirectories of the directory from which the script was run.
 - Any non-picture files in the original directory should be ignored.
+
+
+mkpics2:
+
+- a modified version of mkpics. It takes the number of columns and a directory as an argument instead of the number of columns and list of files. The directory is the root of a tree of filled pictures from running filepics. It contains subdirectories by year which contain subdirectories by month which contain the pictures.
+- writes to standard output one html document that has a table of photos for each year. Each table will be preceded by an <h2> header with the year. 
